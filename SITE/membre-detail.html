@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil — Le Temps d'un Tantra</title>
+    <meta
+      name="description"
+      content="Découvrez le profil de notre masseuse. Expérience tantrique haut de gamme à Charleroi."
+    />
+    <meta name="robots" content="noindex, follow" />
+
+    <link rel="stylesheet" href="https://use.typekit.net/kog5izj.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <header class="navbar" role="banner">
+      <div class="navbar__inner">
+        <div class="navbar__logo">
+          <a href="index.html" aria-label="Accueil — Le Temps d'un Tantra">
+            <img
+              src="assets/LOGO-NAVBAR-GAUCHE-JAUNE.svg"
+              alt="Le Temps d'un Tantra"
+              width="160"
+              height="34"
+            />
+          </a>
+        </div>
+        <nav class="navbar__nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="equipe.html" class="active">Equipe</a></li>
+            <li><a href="services.html">Services &amp; Tarifs</a></li>
+            <li><a href="salon.html">Salon</a></li>
+            <li><a href="charte.html">Charte</a></li>
+          </ul>
+        </nav>
+        <div class="navbar__right">
+          <a href="contact.html" class="cta-4">Contact</a>
+        </div>
+        <button
+          class="navbar__hamburger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="nav-drawer" role="dialog" aria-label="Menu navigation">
+      <button class="nav-drawer__close" aria-label="Fermer le menu">
+        &#x2715;
+      </button>
+      <nav class="nav-drawer__links" aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="equipe.html">Equipe</a>
+        <a href="services.html">Services &amp; Tarifs</a>
+        <a href="salon.html">Salon</a>
+        <a href="charte.html">Charte</a>
+      </nav>
+      <div class="nav-drawer__cta">
+        <a href="contact.html" class="cta-3">Prendre rendez-vous</a>
+      </div>
+    </div>
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <main>
+      <section class="member-hero" aria-label="Profil de la masseuse">
+        <div class="member-hero__inner">
+          <div class="member-hero__image-wrap">
+            <img
+              id="member-image"
+              src=""
+              alt="Photo de la masseuse"
+              width="440"
+              height="560"
+            />
+          </div>
+
+          <div class="member-hero__info">
+            <span class="section-label">Masseuse</span>
+            <h1 id="member-name"></h1>
+            <a href="contact.html" class="cta-3">Réserver une séance</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats-grid-wrapper">
+        <div class="stats-grid" role="list" aria-label="Caractéristiques">
+          <div id="stat-age" class="stat-card" role="listitem">
+            <span class="stat-card__label">Âge</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-taille" class="stat-card" role="listitem">
+            <span class="stat-card__label">Taille</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-poids" class="stat-card" role="listitem">
+            <span class="stat-card__label">Poids</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-bonnet" class="stat-card" role="listitem">
+            <span class="stat-card__label">Bonnet</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-cheveux" class="stat-card" role="listitem">
+            <span class="stat-card__label">Cheveux</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-yeux" class="stat-card" role="listitem">
+            <span class="stat-card__label">Yeux</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-nationalite" class="stat-card" role="listitem">
+            <span class="stat-card__label">Nationalité</span>
+            <span class="stat-card__value">—</span>
+          </div>
+
+          <div id="stat-origine" class="stat-card" role="listitem">
+            <span class="stat-card__label">Origine</span>
+            <span class="stat-card__value">—</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="gallery-section" aria-label="Galerie photos">
+        <div class="gallery-section__header">
+          <span class="section-label">Galerie</span>
+          <h2>Photos</h2>
+        </div>
+        <div id="gallery" class="gallery-grid">
+          <p class="loading-state">Chargement des photos...</p>
+        </div>
+      </section>
+
+      <section
+        id="comments-section"
+        class="comments-section"
+        aria-label="Avis clients"
+      >
+        <div class="comments-section__header">
+          <span class="section-label">Témoignages</span>
+          <h2>Ce qu'ils ont vécu</h2>
+        </div>
+        <ul id="comments-list" class="comments-list">
+          <li class="loading-state">Chargement des avis...</li>
+        </ul>
+      </section>
+
+      <section class="section text-center">
+        <div class="container">
+          <h2 class="anim-fade-up">Prêt à vivre l'expérience&nbsp;?</h2>
+          <p
+            class="anim-fade-up"
+            style="
+              max-width: 480px;
+              margin: 16px auto 32px;
+              color: rgba(251, 251, 251, 0.62);
+            "
+          >
+            Contactez-nous par téléphone ou SMS pour réserver votre séance.
+            L'adresse vous sera communiquée à la confirmation.
+          </p>
+          <div class="cta-group" style="justify-content: center">
+            <a href="tel:+32470100716" class="cta-3"
+              >Appeler le 0470 10 07 16</a
+            >
+            <a href="equipe.html" class="cta-4">Voir l'équipe</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <a href="index.html" aria-label="Accueil — Le Temps d'un Tantra">
+            <img
+              src="assets/LOGO-FOOTER-BLANC.svg"
+              alt="Le Temps d'un Tantra"
+              width="160"
+              height="40"
+            />
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="salon.html">Salon</a></li>
+            <li><a href="charte.html">Charte</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <span class="footer__contact-hours"
+            >Été&nbsp;: 10H–20H &nbsp;|&nbsp; Hiver&nbsp;: 10H–19H</span
+          >
+          <span class="footer__contact-item">
+            <a href="mailto:contact@letempsduntantra.be"
+              >contact@letempsduntantra.be</a
+            >
+          </span>
+          <span class="footer__contact-item">
+            <a href="tel:+32470100716">0470&nbsp;10&nbsp;07&nbsp;16</a>
+          </span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer__bottom">
+          <p>&copy; 2026 Le Temps d'un Tantra — Tous droits réservés</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/sanity.js"></script>
+    <script src="js/membre-detail.js"></script>
+  </body>
+</html>

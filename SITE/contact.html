@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Le Temps d'un Tantra</title>
+    <meta
+      name="description"
+      content="Contactez Le Temps d'un Tantra pour réserver votre séance de massage tantrique à Charleroi. Uniquement sur rendez-vous par téléphone ou SMS."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://letempsduntantra.be/contact.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact — Le Temps d'un Tantra" />
+    <meta
+      property="og:description"
+      content="Réservez votre séance par téléphone ou SMS. L'adresse vous est communiquée à la confirmation."
+    />
+    <meta
+      property="og:url"
+      content="https://letempsduntantra.be/contact.html"
+    />
+    <meta property="og:locale" content="fr_BE" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <link rel="stylesheet" href="https://use.typekit.net/kog5izj.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <header class="navbar" role="banner">
+      <div class="navbar__inner">
+        <div class="navbar__logo">
+          <a href="index.html" aria-label="Accueil — Le Temps d'un Tantra">
+            <img
+              src="assets/LOGO-NAVBAR-GAUCHE-JAUNE.svg"
+              alt="Le Temps d'un Tantra"
+              width="160"
+              height="34"
+            />
+          </a>
+        </div>
+        <nav class="navbar__nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="services.html">Services &amp; Tarifs</a></li>
+            <li><a href="salon.html">Salon</a></li>
+            <li><a href="charte.html">Charte</a></li>
+          </ul>
+        </nav>
+        <div class="navbar__right">
+          <a href="contact.html" class="cta-4 active">Contact</a>
+        </div>
+        <button
+          class="navbar__hamburger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="nav-drawer" role="dialog" aria-label="Menu navigation">
+      <button class="nav-drawer__close" aria-label="Fermer le menu">
+        &#x2715;
+      </button>
+      <nav class="nav-drawer__links" aria-label="Navigation mobile">
+        <a href="index.html">Accueil</a>
+        <a href="equipe.html">Equipe</a>
+        <a href="services.html">Services &amp; Tarifs</a>
+        <a href="salon.html">Salon</a>
+        <a href="charte.html">Charte</a>
+      </nav>
+      <div class="nav-drawer__cta">
+        <a href="tel:+32470100716" class="cta-3">Appeler maintenant</a>
+      </div>
+    </div>
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <main>
+      <div class="hero-placeholder" aria-label="Contact">
+        <div class="hero-placeholder__content">
+          <span class="section-label">Prenez rendez-vous</span>
+          <h1>Contact</h1>
+          <p>
+            Joignez-nous par téléphone ou SMS. Nous vous répondrons avec
+            bienveillance.
+          </p>
+          <span class="hero-gold-line" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <section class="contact-section" aria-label="Coordonnées">
+        <div class="contact-inner">
+          <p class="contact-message">
+            Pour prendre rendez-vous, sonnez ou envoyez un SMS. L'adresse vous
+            sera communiquée à ce moment pour garantir votre discrétion et votre
+            anonymat. Aucun formulaire, aucune trace écrite en ligne.
+          </p>
+
+          <div class="contact-block">
+            <span class="contact-block__label">Téléphone &amp; SMS</span>
+            <a href="tel:+32470100716" class="contact-block__value"
+              >0470&nbsp;10&nbsp;07&nbsp;16</a
+            >
+            <p class="contact-block__subtext">
+              Appel ou SMS — réponse rapide et discrète
+            </p>
+          </div>
+
+          <div class="contact-divider" aria-hidden="true"></div>
+
+          <div class="contact-block">
+            <span class="contact-block__label">Email</span>
+            <a
+              href="mailto:contact@letempsduntantra.be"
+              class="contact-block__value"
+              style="font-size: clamp(1rem, 3vw, 1.6rem)"
+              >contact@letempsduntantra.be</a
+            >
+            <p class="contact-block__subtext">Pour toute question générale</p>
+          </div>
+
+          <div class="contact-divider" aria-hidden="true"></div>
+
+          <div class="contact-block">
+            <span class="contact-block__label">Horaires d'ouverture</span>
+            <div class="contact-hours" aria-label="Horaires">
+              <div class="contact-hours__item">
+                <span class="contact-hours__season">Été</span>
+                <span class="contact-hours__time">10H – 20H</span>
+              </div>
+              <div class="contact-hours__item">
+                <span class="contact-hours__season">Hiver</span>
+                <span class="contact-hours__time">10H – 19H</span>
+              </div>
+            </div>
+            <p class="contact-block__subtext">
+              7j/7 — Sur rendez-vous uniquement
+            </p>
+          </div>
+
+          <a
+            href="tel:+32470100716"
+            class="cta-3"
+            style="display: inline-flex; margin: 8px 0 0"
+          >
+            Appeler pour réserver
+          </a>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 32px">
+            <span class="section-label">Zone de déplacement</span>
+            <h2 style="font-size: clamp(1.3rem, 3vw, 1.9rem)">
+              Nous sommes dans la région de Charleroi
+            </h2>
+            <p
+              style="
+                max-width: 500px;
+                margin: 12px auto 0;
+                color: rgba(251, 251, 251, 0.55);
+                font-size: 0.9rem;
+                line-height: 1.8;
+              "
+            >
+              L'adresse exacte vous est communiquée uniquement à la confirmation
+              de votre rendez-vous. Cette carte indique uniquement la zone
+              générale.
+            </p>
+          </div>
+          <div
+            id="salon-map"
+            style="
+              height: 380px;
+              border: 1px solid rgba(251, 182, 70, 0.25);
+              border-radius: 3px;
+              overflow: hidden;
+              position: relative;
+              z-index: 1;
+            "
+          ></div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        style="padding-top: 0; border-top: 1px solid var(--border-gold)"
+      >
+        <div class="container" style="max-width: 640px; text-align: center">
+          <span class="section-label">Votre anonymat</span>
+          <h2 class="anim-fade-up" style="font-size: clamp(1.3rem, 3vw, 2rem)">
+            Une prise de contact en toute sécurité
+          </h2>
+          <p
+            class="anim-fade-up"
+            style="
+              margin-top: 16px;
+              color: rgba(251, 251, 251, 0.62);
+              font-size: 0.96rem;
+              line-height: 1.8;
+            "
+          >
+            Nous ne conservons aucune donnée personnelle. Votre numéro de
+            téléphone reste confidentiel et ne sera jamais partagé. La
+            localisation exacte du salon n'est transmise qu'à la confirmation de
+            votre rendez-vous.
+          </p>
+          <div
+            class="cta-group"
+            style="justify-content: center; margin-top: 28px"
+          >
+            <a href="charte.html" class="cta-4">Lire notre charte</a>
+            <a href="salon.html" class="cta-4">Découvrir le salon</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <a href="index.html" aria-label="Accueil — Le Temps d'un Tantra">
+            <img
+              src="assets/LOGO-FOOTER-BLANC.svg"
+              alt="Le Temps d'un Tantra"
+              width="160"
+              height="40"
+            />
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="salon.html">Salon</a></li>
+            <li><a href="charte.html">Charte</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <span class="footer__contact-hours"
+            >Été&nbsp;: 10H–20H &nbsp;|&nbsp; Hiver&nbsp;: 10H–19H</span
+          >
+          <span class="footer__contact-item">
+            <a href="mailto:contact@letempsduntantra.be"
+              >contact@letempsduntantra.be</a
+            >
+          </span>
+          <span class="footer__contact-item">
+            <a href="tel:+32470100716">0470&nbsp;10&nbsp;07&nbsp;16</a>
+          </span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer__bottom">
+          <p>&copy; 2026 Le Temps d'un Tantra — Tous droits réservés</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      (function initMap() {
+        const mapEl = document.getElementById("salon-map");
+        if (!mapEl) return;
+
+        const CENTER = [50.3939, 4.4067];
+        const RADIUS_KM = 15;
+
+        const map = L.map("salon-map", {
+          center: CENTER,
+          zoom: 11,
+          scrollWheelZoom: false,
+          zoomControl: true,
+          attributionControl: true,
+        });
+
+        L.tileLayer(
+          "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+          {
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+            subdomains: "abcd",
+            maxZoom: 19,
+          },
+        ).addTo(map);
+
+        L.circle(CENTER, {
+          radius: RADIUS_KM * 1000,
+          color: "#FBB646",
+          fillColor: "#FBB646",
+          fillOpacity: 0.08,
+          weight: 1.5,
+        }).addTo(map);
+
+        const icon = L.divIcon({
+          className: "",
+          html: '<div style="width:14px;height:14px;border-radius:50%;background:#FBB646;box-shadow:0 0 0 4px rgba(251,182,70,0.25);"></div>',
+          iconSize: [14, 14],
+          iconAnchor: [7, 7],
+        });
+        L.marker(CENTER, { icon, alt: "Zone du salon" }).addTo(map);
+      })();
+    </script>
+  </body>
+</html>
