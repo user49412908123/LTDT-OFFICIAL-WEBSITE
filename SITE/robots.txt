@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://letempsduntantra.be/sitemap.xml
+
+# Allow all CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+
+# Disallow admin or sensitive areas if any
+# Disallow: /admin/

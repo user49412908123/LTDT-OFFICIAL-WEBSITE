@@ -888,7 +888,7 @@ p {
   display: block;
   width: 36px;
   height: 1px;
-  background-color: var(--gold);
+  background-color: white;
   margin-bottom: 4px;
 }
 
