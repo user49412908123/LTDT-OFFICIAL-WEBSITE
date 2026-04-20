@@ -1892,3 +1892,8 @@ body.no-scroll {
   font-size: 0.9rem;
   letter-spacing: 0.08em;
 }
+
+.image-salon {
+  max-width: auto;
+  max-height: 100px;
+}
