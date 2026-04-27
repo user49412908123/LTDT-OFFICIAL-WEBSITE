@@ -44,8 +44,10 @@
   }
 
   const nameEl = document.getElementById("member-name");
-  if (nameEl && member.firstname) {
-    nameEl.textContent = member.firstname;
+  if (nameEl) {
+    nameEl.textContent = member.firstname
+      ? `${member.firstname} — masseuse tantra à Charleroi`
+      : "Masseuse tantra à Charleroi";
   }
 
   const imgEl = document.getElementById("member-image");

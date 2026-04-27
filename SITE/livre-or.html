@@ -3,38 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notre Équipe — Le Temps d'un Tantra</title>
-    <link rel="icon" href="/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon-32px.png"
-    />
-    <meta
-      property="og:image"
-      content="https://letempsduntantra/open-graph-ldtd.svg"
-    />
+    <title>Livre d'or | Le Temps d'un Tantra</title>
     <meta
       name="description"
-      content="Découvrez nos masseuses professionnelles et passionnées. Chacune est formée pour vous offrir une expérience tantrique d'exception à Charleroi."
+      content="Découvrez le livre d'or du salon Le Temps d'un Tantra et les retours partagés par nos clients."
     />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://letempsduntantra.be/equipe.html" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Notre Équipe — Le Temps d'un Tantra" />
-    <meta
-      property="og:description"
-      content="Découvrez nos masseuses professionnelles et passionnées."
-    />
-    <meta property="og:url" content="https://letempsduntantra.be/equipe.html" />
-    <meta property="og:locale" content="fr_BE" />
-
     <link rel="stylesheet" href="https://use.typekit.net/kog5izj.css" />
-
     <link rel="stylesheet" href="css/main.css" />
-
     <script src="js/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
@@ -54,10 +29,10 @@
         <nav class="navbar__nav" aria-label="Navigation principale">
           <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="equipe.html" class="active">Equipe</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
             <li><a href="services.html">Services &amp; Tarifs</a></li>
             <li><a href="salon.html">Salon</a></li>
-            <li><a href="livre-or.html">Livre d'or</a></li>
+            <li><a href="livre-or.html" class="active">Livre d'or</a></li>
             <li><a href="charte.html">Charte</a></li>
           </ul>
         </nav>
@@ -93,46 +68,44 @@
     <div class="nav-overlay" aria-hidden="true"></div>
 
     <main>
-      <section class="equipe-intro" aria-label="Notre équipe">
-        <span class="section-label">L'équipe</span>
-        <h1>Notre équipe de massage tantra à Charleroi</h1>
-        <p>
-          Des masseuses passionnées, formées et bienveillantes, entièrement
-          dédiées à votre bien-être. Chacune apporte sa technnique de massage
-          pour vous offrir une expérience sur mesure.
-        </p>
-        <div class="cta-group" style="justify-content: center">
-          <a href="contact.html" class="cta-4">Prendre rendez-vous</a>
-        </div>
-        <span class="hero-gold-line" aria-hidden="true"></span>
-      </section>
-
-      <section class="carousel-section" aria-label="Nos masseuses">
-        <div id="team-carousel-wrapper" style="min-height: 420px">
-          <p class="loading-state">Chargement de l'équipe...</p>
-        </div>
-      </section>
-
-      <section class="section text-center" aria-label="Prise de rendez-vous">
-        <div class="container">
-          <span class="section-label">Envie d'une séance&nbsp;?</span>
-          <h2 class="anim-fade-up">Trouvez votre praticienne de massage tantrique à Charleroi</h2>
-          <p
-            class="anim-fade-up"
-            style="
-              max-width: 520px;
-              margin: 16px auto 32px;
-              color: rgba(251, 251, 251, 0.65);
-            "
-          >
-            Chaque masseuse possède sa propre approche du tantra. Appelez-nous
-            pour être orienté vers la personne idéale selon vos envies.
+      <div class="hero-placeholder" aria-label="Livre d'or">
+        <div class="hero-placeholder__content">
+          <span class="section-label">Vos retours</span>
+          <h1>Livre d'or du <span class="title-highlight">salon</span></h1>
+          <p>
+            Le livre d'or affiche les commentaires généraux sur le salon.
+            Envoyez votre retour à
+            <a href="mailto:contact@letempsduntantra.be"
+              >contact@letempsduntantra.be</a
+            >
+            et nous pourrons le publier ici. Votre anonymat reste total&nbsp;:
+            vous décidez dans votre mail si votre prénom apparaît ou non.
           </p>
-          <div class="cta-group" style="justify-content: center">
-            <a href="contact.html" class="cta-3">Nous contacter</a>
-            <a href="services.html" class="cta-4">Voir les tarifs</a>
+          <div
+            class="cta-group"
+            style="justify-content: center; margin-top: 24px"
+          >
+            <a href="mailto:contact@letempsduntantra.be" class="cta-3"
+              >Laisser un avis</a
+            >
+            <a href="equipe.html" class="cta-4">Voir les masseuses</a>
           </div>
+          <span class="hero-gold-line" aria-hidden="true"></span>
         </div>
+      </div>
+
+      <section class="guestbook-section" aria-label="Commentaires clients">
+        <div class="guestbook-section__header">
+          <span class="section-label">Commentaires</span>
+          <h2>
+            Vos <span class="title-highlight">avis</span> sont publiés ici
+          </h2>
+          <p>
+            Les messages ci-dessous sont synchronisés automatiquement depuis
+            Sanity CMS.
+          </p>
+        </div>
+        <div id="guestbook-entries" class="guestbook-list"></div>
       </section>
     </main>
 
@@ -180,25 +153,8 @@
       </div>
     </footer>
 
-    <template id="masseur-card-template">
-      <article class="team-card">
-        <img
-          class="team-card__image"
-          src=""
-          alt=""
-          loading="lazy"
-          width="260"
-          height="340"
-        />
-        <div class="team-card__body">
-          <h2 class="team-card__name"></h2>
-          <a href="#" class="cta-4 team-card__cta">En savoir plus</a>
-        </div>
-      </article>
-    </template>
-
-    <script src="js/main.js"></script>
     <script src="js/sanity.js"></script>
-    <script src="js/equipe.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/livre-or.js"></script>
   </body>
 </html>
