@@ -157,6 +157,22 @@
         </div>
       </section>
 
+      <section class="member-feedback" aria-label="Retour client">
+        <div class="member-feedback__inner">
+          <span class="section-label">Votre retour compte</span>
+          <h2 id="feedback-title">Laisser un commentaire pour cette praticienne</h2>
+          <p id="feedback-text">
+            Vous avez vécu une expérience avec cette praticienne ? Envoyez-nous
+            votre commentaire par e-mail ou par message, il pourra être ajouté à
+            son profil.
+          </p>
+          <div class="cta-group">
+            <a id="feedback-email-link" href="mailto:contact@letempsduntantra.be" class="cta-3">Envoyer par e-mail</a>
+            <a href="sms:+32470100716" class="cta-4">Envoyer par SMS</a>
+          </div>
+        </div>
+      </section>
+
       <section
         id="comments-section"
         class="comments-section"
@@ -193,6 +209,29 @@
           </div>
         </div>
       </section>
+
+      <div
+        id="image-lightbox"
+        class="image-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Agrandissement d'image"
+        aria-hidden="true"
+        hidden
+      >
+        <button
+          type="button"
+          id="image-lightbox-close"
+          class="image-lightbox__close"
+          aria-label="Fermer l'image"
+        >
+          &#x2715;
+        </button>
+        <img id="image-lightbox-img" src="" alt="" />
+        <p class="image-lightbox__hint">
+          Cliquez en dehors de l'image ou appuyez sur Échap pour fermer.
+        </p>
+      </div>
     </main>
 
     <footer class="footer" role="contentinfo">

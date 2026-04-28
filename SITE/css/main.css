@@ -771,6 +771,7 @@ p {
 }
 
 .team-card {
+  position: relative;
   flex-shrink: 0;
   width: 260px;
   background-color: rgba(255, 255, 255, 0.025);
@@ -797,16 +798,27 @@ p {
 }
 
 .team-card__body {
-  padding: 18px 18px 22px;
+  padding: 16px 18px 20px;
   text-align: center;
 }
 
 .team-card__name {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
-  color: var(--text-light);
-  margin-bottom: 16px;
+  position: absolute;
+  top: 20px;
+  right: -50px;
+  z-index: 2;
+  width: 210px;
+  padding: 8px 20px;
+  background: var(--gold);
+  color: #111;
+  font-family: "the-seasons", serif;
+  font-size: 0.95rem;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(35deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
 }
 
 .two-col {
@@ -1040,8 +1052,19 @@ p {
   padding: 0 var(--gutter);
 }
 
+.faq-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 40px;
+  list-style: none;
+}
+
 .faq-item {
   border-bottom: 1px solid var(--border-gold);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .faq-item:first-child {
@@ -1064,10 +1087,15 @@ p {
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   letter-spacing: 0.04em;
   transition: color var(--transition);
+  user-select: none;
 }
 
 .faq-item__question:hover {
   color: var(--gold);
+}
+
+.faq-item__question:active {
+  transform: scale(0.98);
 }
 
 .faq-item__icon {
@@ -1078,12 +1106,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 300;
   color: var(--gold);
   transition:
     transform var(--transition),
-    border-color var(--transition);
+    border-color var(--transition),
+    background-color var(--transition);
   line-height: 1;
   font-family: var(--font-body);
 }
@@ -1091,11 +1120,17 @@ p {
 .faq-item.is-open .faq-item__icon {
   transform: rotate(45deg);
   border-color: var(--gold);
+  background-color: rgba(251, 182, 70, 0.08);
 }
 
 .faq-item__answer {
   overflow: hidden;
   height: 0;
+  transition: height var(--transition-slow);
+}
+
+.faq-item.is-open .faq-item__answer {
+  height: auto;
 }
 
 .faq-item__answer-inner {
@@ -1106,6 +1141,18 @@ p {
   font-size: 0.93rem;
   line-height: 1.78;
   color: rgba(251, 251, 251, 0.7);
+  animation: slideDown var(--transition-slow) ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .services-section {
@@ -1666,6 +1713,10 @@ p {
   opacity: 0.85;
 }
 
+.zoomable-image {
+  cursor: zoom-in;
+}
+
 @media (min-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1681,6 +1732,79 @@ p {
 .comments-section {
   padding: var(--section-pad) 0;
   border-top: 1px solid var(--border-gold);
+}
+
+.member-feedback {
+  border-top: 1px solid var(--border-gold);
+  padding: var(--section-pad) 0;
+}
+
+.member-feedback__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.member-feedback__inner h2 {
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.member-feedback__inner p {
+  color: rgba(251, 251, 251, 0.72);
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  background: rgba(7, 7, 7, 0.92);
+  padding: 72px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.image-lightbox[hidden] {
+  display: none;
+}
+
+.image-lightbox img {
+  max-width: min(100%, 1100px);
+  max-height: calc(100vh - 180px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--border-gold);
+}
+
+.image-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-gold);
+  background: rgba(15, 15, 15, 0.75);
+  color: var(--text-light);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.image-lightbox__hint {
+  margin: 0;
+  text-align: center;
+  color: rgba(251, 251, 251, 0.68);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+body.is-lightbox-open {
+  overflow: hidden;
 }
 
 .comments-section__header {

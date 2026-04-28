@@ -42,7 +42,7 @@
     }
 
     if (name) {
-      name.textContent = member.firstname || "";
+      name.textContent = member.firstname || "Masseuse";
     }
 
     if (cta && member.slug && member.slug.current) {

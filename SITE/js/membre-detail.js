@@ -50,10 +50,33 @@
       : "Masseuse tantra à Charleroi";
   }
 
+  const feedbackTitleEl = document.getElementById("feedback-title");
+  if (feedbackTitleEl) {
+    feedbackTitleEl.textContent = member.firstname
+      ? `Laisser un commentaire pour ${member.firstname}`
+      : "Laisser un commentaire pour cette praticienne";
+  }
+
+  const feedbackTextEl = document.getElementById("feedback-text");
+  if (feedbackTextEl) {
+    feedbackTextEl.textContent = member.firstname
+      ? `Vous avez vécu une expérience avec ${member.firstname} ? Envoyez-nous votre commentaire par e-mail ou par message, il pourra être ajouté à son profil.`
+      : "Vous avez vécu une expérience avec cette praticienne ? Envoyez-nous votre commentaire par e-mail ou par message, il pourra être ajouté à son profil.";
+  }
+
+  const feedbackEmailLinkEl = document.getElementById("feedback-email-link");
+  if (feedbackEmailLinkEl) {
+    const subject = member.firstname
+      ? `Commentaire pour ${member.firstname}`
+      : "Commentaire pour une praticienne";
+    feedbackEmailLinkEl.href = `mailto:contact@letempsduntantra.be?subject=${encodeURIComponent(subject)}`;
+  }
+
   const imgEl = document.getElementById("member-image");
   if (imgEl && member.image) {
     imgEl.src = imageUrl(member.image, 800);
     imgEl.alt = member.firstname || "Masseuse";
+    imgEl.classList.add("zoomable-image");
   }
 
   const statMap = {
@@ -84,6 +107,7 @@
         img.src = imageUrl(url, 600);
         img.alt = `${member.firstname || "Photo"} — galerie`;
         img.loading = "lazy";
+        img.classList.add("zoomable-image");
         gsap.set(img, { opacity: 0, y: 16 });
         return img;
       });
@@ -108,6 +132,8 @@
       galleryEl.innerHTML = '<p class="empty-state">Galerie à venir...</p>';
     }
   }
+
+  setupImageLightbox();
 
   const commentsList = document.getElementById("comments-list");
   const commentsSection = document.getElementById("comments-section");
@@ -204,6 +230,44 @@
     });
   }
 })();
+
+function setupImageLightbox() {
+  const lightbox = document.getElementById("image-lightbox");
+  const lightboxImg = document.getElementById("image-lightbox-img");
+  const closeBtn = document.getElementById("image-lightbox-close");
+
+  if (!lightbox || !lightboxImg || !closeBtn) return;
+
+  const openLightbox = (img) => {
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt || "Agrandissement photo";
+    lightbox.hidden = false;
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-lightbox-open");
+  };
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImg.src = "";
+    lightboxImg.alt = "";
+    document.body.classList.remove("is-lightbox-open");
+  };
+
+  document.querySelectorAll(".zoomable-image").forEach((img) => {
+    img.addEventListener("click", () => openLightbox(img));
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+}
 
 function showError(message) {
   const main = document.querySelector("main") || document.body;
